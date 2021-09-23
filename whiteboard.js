@@ -29,3 +29,28 @@
 // => 2 => 1 => 4 => 2 => 1
 
 // 12: 12 => 6 => 3 => 10 => 5 => 16 => 8 => 4 => 2 => 1
+
+
+// Write some fn collatz, accept any num, apply the 2 rules,
+// return num of steps it takes to get to 1 (to enter the infinite loop)
+
+function collatz (n) {
+    let count = 0
+    let z = n
+
+    while (z > 1) { // or while (z !== 1)
+        if (z % 2 === 0) {
+            z /= 2
+        } else {
+            z *= 3
+            z += 1
+        }
+        count++
+    }
+
+    return count
+}
+
+console.log(collatz(8))
+console.log(collatz(12))
+console.log(collatz(1))
